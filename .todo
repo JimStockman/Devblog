@@ -1,0 +1,7 @@
+/// Entities ///
+
+User
+    Id
+    Name
+    Email
+    password
