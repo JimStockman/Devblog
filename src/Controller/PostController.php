@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Form\PostType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +35,7 @@ class PostController extends AbstractController
     }
     
     /**
-     * @Route("/{id}", name="show")
+     * @Route("/show/{id}", name="show")
      * @param  Post  $post
      * @return Response
      */
@@ -55,22 +56,34 @@ class PostController extends AbstractController
      */
     public function create(Request $request)
     {
-        // We create a new Post object and assign a title to it
         $post = new Post();
-        $post->setTitle('This is a static title');
+        $form = $this->createForm(PostType::class, $post);
         
-        // Entity manager persists the post in the db
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($post);
+        $form->handleRequest($request);
         
-        // Sends all the queries to the db
-        $em->flush();
+        // Will only happen on POST requests
+        if ($form->isSubmitted()) {
+            
+             //Entity manager persists the post in the db
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($post);
+
+            // Sends all the queries to the db
+            $em->flush();
+    
+            $this->addFlash('create', 'Post created successfully!');
+    
+            return $this->redirect($this->generateUrl('post.index'));
+        }
         
-        return new Response('Post was created');
-        
-//        return $this->render('post/create.html.twig', [
+//        // We create a new Post object and assign a title to it
+//        $post->setTitle('This is a static title');
 //
-//        ]);
+//
+        
+        return $this->render('post/create.html.twig', [
+            'form' => $form->createView(),
+        ]);
     }
     
     /**
@@ -82,6 +95,8 @@ class PostController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->remove($post);
         $em->flush();
+        
+        $this->addFlash('delete', 'Post removed successfully!');
         
         return $this->redirect($this->generateUrl('post.index'));
     }
