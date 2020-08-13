@@ -33,6 +33,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
+        
         $form = $this->createForm(UserRegistrationType::class, $user);
 
         $form->handleRequest($request);
@@ -41,10 +42,10 @@ class RegistrationController extends AbstractController
             $encodedPassword = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($encodedPassword);
     
-            dump([
-                'form' => $form,
-                'user' => $user
-            ]); die;
+//            dump([
+//                'form' => $form,
+//                'user' => $user
+//            ]); die;
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);

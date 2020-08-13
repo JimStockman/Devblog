@@ -26,10 +26,14 @@ class UserRegistrationType extends AbstractType
                 'second_options' => ['label' => 'Repeat password'],
                 
             ])
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'User' => 0,
-                    'Admin' => 1,
+            ->add('roles', CollectionType::class, [
+                'entry_type'   => ChoiceType::class,
+                'entry_options'  => [
+                    'label' => false,
+                    'choices' => [
+                        'Admin' => 'ROLE_ADMIN',
+                        'Super' => 'ROLE_SUPER_ADMIN',
+                    ],
                 ],
             ])
             ->add('Save', SubmitType::class, [

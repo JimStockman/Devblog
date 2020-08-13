@@ -6,6 +6,7 @@ use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,13 +37,14 @@ class PostController extends AbstractController
     
     /**
      * @Route("/show/{id}", name="show")
-     * @param  Post  $post
+     * @param  int  $id
+     * @param  PostRepository  $postRepository
      * @return Response
      */
-    public function show(Post $post)
+    public function show(int $id, PostRepository $postRepository)
     {
+        $post = $postRepository->findPostWithCategory($id);
         
-        dump($post);
         return $this->render('post/show.html.twig', [
             'post' => $post
         ]);
@@ -66,6 +68,25 @@ class PostController extends AbstractController
             
              //Entity manager persists the post in the db
             $em = $this->getDoctrine()->getManager();
+            
+            
+            // We check if a file was attached to the request
+            // If so
+            /** @var UploadedFile $file */
+            dump($request);
+            
+            $file = $request->files->get('post')['attachment'];
+            if ($file) {
+               $fileName = md5(uniqid()) . '.' . $file->guessClientExtension();
+               
+               $file->move(
+                   $this->getParameter('uploads_dir'),
+                   $fileName
+               );
+               
+               $post->setImage($fileName);
+            }
+            
             $em->persist($post);
 
             // Sends all the queries to the db

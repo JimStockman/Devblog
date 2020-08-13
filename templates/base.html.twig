@@ -20,18 +20,30 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li {% if route_name matches '{^custom}' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
-                    <a class="nav-link" href="{{ path('custom', {username: 'Jim'}) }}">Greet Jim</a>
-                </li>
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li {% if route_name matches '{^custom}' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
+                        <a class="nav-link" href="{{ path('custom', {username: app.user.username }) }}">Greet {{ app.user.username }}</a>
+                    </li>
+                {% endif %}
+
 
 
                 <li {% if route_name matches '{^post}' %} class="nav-item active" {% else %} class="nav-item" {% endif %}>
                     <a id="posts-link" class="nav-link" href="{{ path('post.index') }}">Posts</a>
                 </li>
+
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                {% else %}
+
+                {% endif %}
+
             </form>
         </div>
     </nav>

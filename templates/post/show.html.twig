@@ -4,6 +4,13 @@
 
 {% block body %}
 
-<h1>{{ post.title }}</h1>
+<div class="row">
+    <div class="col md-8">
+        <h1>{{ post.title }}</h1>
+        <h2>{{ post.category }}</h2>
+        <hr>
+        <img class="img-fluid" src="{{ '/uploads/' ~ post.image }}" alt="image">
+    </div>
+</div>
 
 {% endblock %}
