@@ -2,26 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de187261-f475-4bce-a7f3-62198d2f7c8b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200812100833.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200812101049.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200812101242.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20200812103059.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/PostType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20200813082655.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/17c71497398c5769988f60dbbcad730a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/36e341271af3db71c4762840893df9e8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PostType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PostType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PostRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/CustomAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/CustomAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/create.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/create.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +170,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -186,6 +187,8 @@
       <updated>1597150092378</updated>
       <workItem from="1597150093457" duration="11793000" />
       <workItem from="1597216027290" duration="11550000" />
+      <workItem from="1597244097196" duration="115000" />
+      <workItem from="1597306296969" duration="16778000" />
     </task>
     <servers />
   </component>
@@ -204,9 +207,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1597223110891" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597228742306">
+    <state x="491" y="164" key="SettingsEditor" timestamp="1597244213756">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="491" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597244213756" />
+    <state x="800" y="364" key="cloudConfig.SelfSettingsDialog" timestamp="1597325652933">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="800" y="364" key="cloudConfig.SelfSettingsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597325652933" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597330036926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1597330036926" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597315089442" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1597228742306" />
   </component>
 </project>
